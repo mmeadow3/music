@@ -1,0 +1,56 @@
+/*header styles*/
+.header {
+	background: #FFB4B0;
+	border: 2px solid black;
+    margin: 15px auto;
+    padding: 2px 2px;
+}
+h2 {
+	display: inline;
+	padding-right: .5em;
+	height: 20px;
+	font-size: 20px;
+}
+/*sidebar styles*/
+.sidebar {
+	background: #4DD7FA; 
+	border: 2px solid black;
+	display: block;
+	width: 29%;
+	float: left;
+	height: 425px;
+}
+
+/*Main box styles*/
+.main {
+	background: #FEFAC0;  
+	border: 2px solid black;
+	display: block;
+	width: 69%;
+	float: right;
+	height: 425px;
+}
+
+/*main paragraph styles*/
+.main p {
+	display: inline;
+	padding-right: 5px; 
+}
+
+/*checkbox*/
+.check {
+	margin: 0 auto;	
+}
+
+.left{
+
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+	
+}
+.btn {
+	margin: 20px 50px;
+}
