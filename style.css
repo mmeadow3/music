@@ -50,7 +50,24 @@ h2 {
 	text-align: right;
 }
 	
-}
 .btn {
  float:right;
 }
+
+#javascript {
+	background: #FEFAC0;  
+	border: 2px solid black;
+	display: block;
+	width: 69%;
+	float: right;
+	height: 425px;
+}
+
+.songs {
+	background: #FFB4B0;
+	border: 2px solid black;
+    margin: 15px auto;
+    padding: 2px 2px;
+}
+
+
