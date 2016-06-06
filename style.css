@@ -73,7 +73,7 @@ h2 {
 #jsonMusic, #jsonMusic2{
 	background: #FEFAC0;  
 	border: 2px solid black;
-	display: block;
+	display: inline-block;
 	width: 69%;
 	float: right;
 	height: 425px;
