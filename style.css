@@ -54,14 +54,7 @@ h2 {
  float:right;
 }
 
-#javascript {
-	background: #FEFAC0;  
-	border: 2px solid black;
-	display: block;
-	width: 69%;
-	float: right;
-	height: 425px;
-}
+
 
 .songs {
 	background: #FFB4B0;
@@ -70,35 +63,4 @@ h2 {
     padding: 2px 2px;
 }
 /*JSON*/
-#jsonMusic, #jsonMusic2{
-	background: #FEFAC0;  
-	border: 2px solid black;
-	display: inline-block;
-	width: 69%;
-	float: right;
-	height: 425px;
-}
 
-
-.songs2 {
-	background: #FFB4B0;
-	border: 2px solid black;
-    margin: 15px auto;
-    padding: 2px 2px;	
-}
-.json3 {
-	background: #FFB4B0;
-	border: 2px solid black;
-    margin: 15px auto;
-    padding: 2px 2px;	
-}
-/*Delete button style */
-#delete {
-	float:right;
-}
-
-/*Add button*/
-#more {
-	margin-left: 100px;
-	margin-top: 50px;
-}
