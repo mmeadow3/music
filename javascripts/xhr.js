@@ -1,8 +1,8 @@
-
 "use strict";
+
 var $ajax = $.ajax({
 		url: "music.json"
-	}).done(renderinDOM) 
+	}).done(renderinDOM); 
 
 //console.log($ajax) /////gives jQuery object
 
@@ -12,5 +12,7 @@ function renderinDOM (data){    ///////passes in an argument to parse info from 
 	for (var i = 0; i < data.length; i++) {
 	$('.main').append("<div id='jsonMusic'>" + data[i].title + "by " + data[i].artist + " on the album " + data[i].album + "</div>");
 }
-};
+}
 ////////Data appended to DOM///////////
+/////////////////Add second JSON File when a button is clicked/////////////////
+/////////will do this on songs.js////////
