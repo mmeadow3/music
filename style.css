@@ -77,5 +77,11 @@ h2 {
 }
 
 .moreButton {
-	float: left;
+	position:relative;    /*added*/
+    bottom:-100px;          /*added*/
+    right:-200px;
+}
+
+.songitem2, .songsItem{
+	height: 30px;
 }

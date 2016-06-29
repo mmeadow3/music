@@ -5,27 +5,25 @@ var delButton = $('<button/>')
   // class: 'deleteButton',
   // id: 'delete',    bad to have "static ID on button"
   .text('Delete')
-  .click(function () { ///////start of function///////
+  .click(function() { ///////start of function///////
     $(this).parent().remove();
-    console.log("hey")
+    // console.log("hey")
   });
 ////////////
 
-
-
-var yarp = "<button>Yarp</button>";
 var $ajax = $.ajax({
 		url: "music.json"
 	}).done(renderinDOM); 
 
 function renderinDOM (data){    ///////passes in an argument to parse info from JSON file
-	console.log(delButton)
+	// console.log(delButton)
 	for (var i = 0; i < data.length; i++) {
 		var newButton = delButton;
-		$('.main').append(`<div class="songsItem">` + data[i].title + " by " + data[i].artist + " on the album " + data[i].album  + "   " + "</div>");
-		$(`.songsItem`).append(newButton);
+		$('.main').append('<div class="songsItem">' + data[i].title + " by " + data[i].artist + " on the album " + data[i].album + "</div>");
+		// console.log(newButton);
 	} 
-};
+		$(".songsItem").append(newButton);  ///////outside of for loop//////
+}
 
 
 ////////Data appended to DOM///////////
@@ -44,12 +42,15 @@ var $button = $('<button/>', {
 function renderinDOM (data){    ///////passes in an argument to parse info from JSON file
 	// console.log(data.length)
 	for (var i = 0; i < data.length; i++) {
+	var newButton2 = delButton;
+
+	// console.log(delButton);
 	$('.main').append(`<div class="songitem2">` + data[i].title + " by " + data[i].artist + " on the album " + data[i].album  + `</div>`);
-	$(`.songitem2`).append(delButton);
+}
+	$(".songitem2").append(newButton2);
 }
 }
-}
-}).appendTo($('#output')) //////can move with CSS ///////////
+}).appendTo($('#output')); //////can move with CSS ///////////
 
 
 
