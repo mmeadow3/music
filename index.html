@@ -9,71 +9,68 @@
 
 <body>
 <header class="header">
-		<h2 a href="#">View music</a></h2>
-		<h2>|</h2>
-		<h2 a href="#">Add Music</a></h2>
-		<h2>|</h2>
-		<h2 a href="#">Profile</a></h2>
+        <h2 a href="#">View music</a></h2>
+        <h2>|</h2>
+        <h2 a href="#">Add Music</a></h2>
+        <h2>|</h2>
+        <h2 a href="#">Profile</a></h2>
 </header><!-- /header -->
 
 <!-- This is the right sidebar -->
 <div class="sidebar">
-	<h3>Song Length</h3>
-		<!-- slidebar will go here -->
-		<input type="range">
-	<h3>Artist</h3>
+    <h3>Song Length</h3>
+        <!-- slidebar will go here -->
+        <input type="range">
+    <h3>Artist</h3>
 <!-- dropdown will go here -->
-	<select name="Artist">
-	  <option>Mars Volta</option>
-	  <option>Phish</option>
-	  <option>Led Zepplin</option>
-	  <option>Steely Dan</option>
-	  <option>At the Drive In</option>
-	</select>
-	
+    <select name="Artist">
+      <option>Mars Volta</option>
+      <option>Phish</option>
+      <option>Led Zepplin</option>
+      <option>Steely Dan</option>
+      <option>At the Drive In</option>
+    </select>
+    
 
-	<h3>Album</h3>
-		<select name="Album">
-		  <option>Octahedron</option>
-		  <option>Hoist</option>
-		  <option>How the West Was Won</option>
-		  <option>Aja</option>
-		  <option>Relationship of Command</option>
-		</select>	
+    <h3>Album</h3>
+        <select name="Album">
+          <option>Octahedron</option>
+          <option>Hoist</option>
+          <option>How the West Was Won</option>
+          <option>Aja</option>
+          <option>Relationship of Command</option>
+        </select>   
 
-	<div class="check">
-	<h3>Genre</h3>
-		<ul>
-			<label><input type='checkbox' name="music" class="left"><span></span>Rock</label>
-			<label><input type='checkbox' name="music" class="left"><span></span>Pop</label>
-		    <label><input type='checkbox' name="music" class="left"><span></span>Blues</label>
-	  	</ul>
-	  	<ul>
-			<label><input type='checkbox' name="music" class="right"><span></span>Classical</label> 
-			<label><input type='checkbox' name="music" class="right"><span></span>Jazz</label>
-			<label><input type='checkbox' name="music" class="right"><span></span>Hip Hop</label>
-		</ul>
+    <div class="check">
+    <h3>Genre</h3>
+        <ul>
+            <label><input type='checkbox' name="music" class="left"><span></span>Rock</label>
+            <label><input type='checkbox' name="music" class="left"><span></span>Pop</label>
+            <label><input type='checkbox' name="music" class="left"><span></span>Blues</label>
+        </ul>
+        <ul>
+            <label><input type='checkbox' name="music" class="right"><span></span>Classical</label> 
+            <label><input type='checkbox' name="music" class="right"><span></span>Jazz</label>
+            <label><input type='checkbox' name="music" class="right"><span></span>Hip Hop</label>
+        </ul>
 
-		
-	<div class="btn">
-	<button  type="button">Filter</button>
-	</div>
-	</div>
+        
+    <div class="btn">
+    <button  type="button">Filter</button>
+    </div>
+    </div>
 </div>
 
 
 <!-- Main box -->
-<div class="main">
+<div class="main"> 
+<div id="output"></div>
 </div>
-<div id="javascript">
-</div>
-<div>
-<div id="jsonMusic"></div>
 
-</div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
-<script src="xhr.js"></script>
+<div id="javascript"></div>
+<script src="./node_modules/jquery/dist/jquery.js"></script>
+<script src="javascripts/xhr.js"></script>
+<script src="javascripts/songs.js"></script>
 
 
 
