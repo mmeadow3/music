@@ -1,7 +1,7 @@
 {
   "name": "task_runners",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is the project that you will be working for your individual work throughout the entire front end course. Don't worry, you'll be building lots of other applications, but when you learn a new technique, library or language, you'll be cutting your teeth with it on Music History.",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,5 +15,14 @@
     "jquery": "^2.2.4",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mmeadow3/music.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mmeadow3/music/issues"
+  },
+  "homepage": "https://github.com/mmeadow3/music#readme"
 }

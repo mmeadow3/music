@@ -1,0 +1,17 @@
+{
+  "name": "Music",
+  "description": "This is the project that you will be working for your individual work throughout the entire front end course. Don't worry, you'll be building lots of other applications, but when you learn a new technique, library or language, you'll be cutting your teeth with it on Music History.",
+  "main": "gulpfile.js",
+  "authors": [
+    "Mike Meadows <mmeadow33@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/mmeadow3/music",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
