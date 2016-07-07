@@ -1,11 +1,17 @@
 "use strict";
-///////Delete button/////////
-// var $ = require('jQuery');
 
-// const XHR = require('./xhr');
+// const Loader = require('./loader');
 
 
+console.log("test");
+let addToArray = function(data){
+	console.log("hey");
+	// for (var x in data){
+	// songs.push(data);
+};
+// addToArray();
 
+module.exports = addToArray;
 
 
 

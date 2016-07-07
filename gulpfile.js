@@ -9,7 +9,7 @@ let source = require('vinyl-source-stream');
 let buffer = require('vinyl-buffer');
 let gutil = require('gulp-util');
 let sourcemaps = require('gulp-sourcemaps');
-let sass = require('gulp-sass');
+// let sass = require('gulp-sass');
 
 let handleError = function(task) {
   return function(err) {
@@ -31,7 +31,7 @@ let handleError = function(task) {
  */
 
 let customOpts = {
-  entries: ['./src/javascripts/songs.js'],
+  entries: ['./src/javascripts/loader.js'],
   debug: true
 };
 let opts = Object.assign({}, watchify.args, customOpts);
@@ -74,27 +74,27 @@ gulp.task('lint', function() {
 
   Delete or comment out if you are not using SASS
  */
-gulp.task('sass', function() {
-  return gulp.src('./src/sass/*.scss')
-    // sourcemaps + sass + error handling
-    .pipe(sourcemaps.init())
-    .pipe(sass({
-      sourceComments: true,
-      outputStyle: 'compressed'  // nested || compressed
-    }))
-    .on('error', handleError('SASS'))
-    // generate .maps
-    .pipe(sourcemaps.write({
-      'includeContent': false,
-      'sourceRoot': '.'
-    }))
-    .pipe(sourcemaps.write({
-      'includeContent': true
-    }))
-    // write sourcemaps to a specific directory
-    // give it a file and save
-    .pipe(gulp.dest('./dist/css'));
-});
+// gulp.task('sass', function() {
+//   return gulp.src('./src/sass/*.scss')
+//     // sourcemaps + sass + error handling
+//     .pipe(sourcemaps.init())
+//     .pipe(sass({
+//       sourceComments: true,
+//       outputStyle: 'compressed'  // nested || compressed
+//     }))
+//     .on('error', handleError('SASS'))
+//     // generate .maps
+//     .pipe(sourcemaps.write({
+//       'includeContent': false,
+//       'sourceRoot': '.'
+//     }))
+//     .pipe(sourcemaps.write({
+//       'includeContent': true
+//     }))
+//     // write sourcemaps to a specific directory
+//     // give it a file and save
+//     .pipe(gulp.dest('./dist/css'));
+// });
 
 
 /*
@@ -105,14 +105,14 @@ gulp.task('sass', function() {
  */
 gulp.task('watch', function() {
   // Run the link task when any JavaScript file changes
-  gulp.watch(['./src/scripts/**/*.js'], ['lint']);
+  gulp.watch(['./src/javascripts/**/*.js'], ['lint']);
 
   // Run the sass task when any SCSS file changes
   // Remov if not using SASS
-  gulp.watch('./src/sass/**/*.scss', ['sass']);
+  // gulp.watch('./src/sass/**/*.scss', ['sass']);
 
   gutil.log(gutil.colors.bgGreen('Watching for changes...'));
 });
 
 // This task runs when you type `gulp` in the CLI
-gulp.task('default', ['lint', 'sass', 'watch'], bundle);
+gulp.task('default', ['lint', 'watch'], bundle);
