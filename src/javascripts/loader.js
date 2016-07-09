@@ -30,8 +30,8 @@ AJAX.load().then(function(data){
   artistArray.push(data[i].artist); 
   albumArray.push(data[i].album);
 } ///////end of for loop//////
-MainModule.Print();
-  console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
+console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
+MainModule.Print(data);  /////passing the "data" makes this print out object////////
   // Filter.add();/////////////////Why wont this work if I'm calling it here/////////
 });
 
