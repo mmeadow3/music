@@ -1,12 +1,13 @@
 "use strict";
 
-const Songs = require("./songs");
-// const x = require("./x");
-// const x = require("./x");
-// const x = require("./x");
+let Print = require('./print');
+let Filter = require('./filter');
+let Loader = require('./loader');
 
 let mainModule = {
-	Songs
+	Print, 
+	Filter, 
+	Loader
 };
 
 

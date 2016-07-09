@@ -1,14 +1,13 @@
 "use strict";
 
 var $ = require('jQuery');
-const Songs = require('./songs');
-const Views = require('./views');
-const Filter = require('./filter');
-const AddSongs = require('./addSongs');
-const Main = require("./mainModule");
+let MainModule = require('./mainModule'); ///// needs this///////
 ///////Everything has to draw off of this js file///////////
 let AJAX = {};
-let songs = [];
+
+let songsArray = [];
+let artistArray = [];
+let albumArray = [];
 
 AJAX.load = function() {
   return new Promise((resolve, reject) => {
@@ -23,19 +22,17 @@ AJAX.load = function() {
   });
 }; 
 
-/////////Needs 2 methods///////////
+/////////Needs method to push to array///////////
 ////////need to add data to songs array////////////
 AJAX.load().then(function(data){
   for (var i = 0; i < data.length; i++){
-  songs.push(data[i].title + " by " + data[i].artist + " on the album " + data[i].album)}
-  console.log(songs);
-  // console.log("hey", data); ///////will still print out correct value///////////
-  // Songs.addToArray(data);
+  songsArray.push(data[i].title);
+  artistArray.push(data[i].artist); 
+  albumArray.push(data[i].album);
+} ///////end of for loop//////
+MainModule.Print();
+  console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
+  // Filter.add();/////////////////Why wont this work if I'm calling it here/////////
+});
 
-}); ////// accessing the data correctly 
-
-
-
-// $.map(AJAX, function(song) {
-//     console.log(songs.album);
-// });
+module.exports = AJAX;
