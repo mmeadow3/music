@@ -33,6 +33,7 @@ AJAX.load().then(function(data){
 console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
 MainModule.Print(data);  /////passing the "data" makes this print out object///////
 MainModule.Filter.changeArtist(data);
+MainModule.Delete();
 });
 
 module.exports = AJAX;

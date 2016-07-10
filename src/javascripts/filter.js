@@ -12,15 +12,17 @@ let Filter = {};
 
 Filter.changeArtist = function (data){
 $selectArtist.change(function(){
-	console.log($selectArtist.val());
+	// console.log($selectArtist.val());
 	// console.log(data[1].artist)
 	for (var x in data){
 	if ($selectArtist.val() === data[x].artist){
-		$('#song--0').hide();
+		$('#output >:not(:eq())').hide();  
+		$('#song--[x]').appendTo($('#output')); 
 	}
 }
 })};
 
+	
 
 
 
