@@ -8,7 +8,7 @@ let Print = function (data) {
   newHTML += `<div id=song--${x}> <h3> ${data[x].title} </h3><p> ${data[x].artist} | ${data[x].album}</p><input type="button" class="deleteButton" value="Delete"></div>`;
   }
    $output.html(newHTML);
-  console.log("data in function", data[2]);
+  // console.log("data in function", data[2]);
 }
 
 module.exports = Print;

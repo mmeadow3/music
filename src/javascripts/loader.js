@@ -31,8 +31,8 @@ AJAX.load().then(function(data){
   albumArray.push(data[i].album);
 } ///////end of for loop//////
 console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
-MainModule.Print(data);  /////passing the "data" makes this print out object////////
-  // Filter.add();/////////////////Why wont this work if I'm calling it here/////////
+MainModule.Print(data);  /////passing the "data" makes this print out object///////
+MainModule.Filter.changeArtist(data);
 });
 
 module.exports = AJAX;

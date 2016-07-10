@@ -9,15 +9,17 @@ let $radio = $('.radio');
 let $filter = $('#filter');
 let Filter = {}; 
 
-console.log(Loader)
 
+Filter.changeArtist = function (data){
 $selectArtist.change(function(){
-	console.log("working")
-	for (var x in MainModule.album){
-
+	console.log($selectArtist.val());
+	// console.log(data[1].artist)
+	for (var x in data){
+	if ($selectArtist.val() === data[x].artist){
+		$('#song--0').hide();
 	}
-});
-
+}
+})};
 
 
 
