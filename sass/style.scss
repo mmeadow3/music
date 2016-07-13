@@ -1,0 +1,17 @@
+@import 'json';
+@import 'header';
+@import 'sidebar';
+
+.main {
+	background: #FEFAC0;  
+	border: 2px solid black;
+	display: block;
+	width: 69%;
+	float: right;
+	height: 425px;
+}
+
+.main p {
+	display: inline;
+	padding-right: 5px; 
+}
