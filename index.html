@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Music History</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="style/style.css">
 </head>
 
 <body>
@@ -23,40 +23,39 @@
         <input type="range">
     <h3>Artist</h3>
 <!-- dropdown will go here -->
-    <select name="Artist">
-      <option>Mars Volta</option>
+    <select name="Artist" id="artist">
+      <option>ZZ Top</option>
+      <option>Grace Potter</option>
+      <option>Mayer Hawthorne</option>
       <option>Phish</option>
-      <option>Led Zepplin</option>
-      <option>Steely Dan</option>
-      <option>At the Drive In</option>
+      <option>Mars Volta</option>
     </select>
     
 
     <h3>Album</h3>
-        <select name="Album">
-          <option>Octahedron</option>
+        <select name="Album" id="album">
+          <option>Eliminator</option>
+          <option>Grace Potter and the Nocturnals</option>
+          <option>How Do You Do</option>
           <option>Hoist</option>
-          <option>How the West Was Won</option>
-          <option>Aja</option>
-          <option>Relationship of Command</option>
         </select>   
 
     <div class="check">
     <h3>Genre</h3>
-        <ul>
-            <label><input type='checkbox' name="music" class="left"><span></span>Rock</label>
-            <label><input type='checkbox' name="music" class="left"><span></span>Pop</label>
-            <label><input type='checkbox' name="music" class="left"><span></span>Blues</label>
+        <ul class="radio">
+            <label><input type='radio' name="music" class="left"><span></span>Rock</label>
+            <label><input type='radio' name="music" class="left"><span></span>Pop</label>
+            <label><input type='radio' name="music" class="left"><span></span>Blues</label>
         </ul>
-        <ul>
-            <label><input type='checkbox' name="music" class="right"><span></span>Classical</label> 
-            <label><input type='checkbox' name="music" class="right"><span></span>Jazz</label>
-            <label><input type='checkbox' name="music" class="right"><span></span>Hip Hop</label>
+        <ul class="radio">
+            <label><input type='radio' name="music" class="right"><span></span>Classical</label> 
+            <label><input type='radio' name="music" class="right"><span></span>Jazz</label>
+            <label><input type='radio' name="music" class="right"><span></span>Hip Hop</label>
         </ul>
 
         
     <div class="btn">
-    <button  type="button">Filter</button>
+    <button type="button" id="filter">Filter</button>
     </div>
     </div>
 </div>

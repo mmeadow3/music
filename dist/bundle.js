@@ -9816,20 +9816,92 @@ return jQuery;
 
 },{}],2:[function(require,module,exports){
 "use strict";
-},{}],3:[function(require,module,exports){
-arguments[4][2][0].apply(exports,arguments)
-},{"dup":2}],4:[function(require,module,exports){
+
+let Print = require('./print');
+
+let Delete = function (){
+	$('.deleteButton').click(function(){
+		$(this).parent().remove();
+	});
+};
+
+module.exports = Delete;
+},{"./print":6}],3:[function(require,module,exports){
+"use strict";
+
+let Loader = require('./loader');
+
+
+let $selectArtist = $('#artist');
+let $selectAlbum = $('#album');
+let $radio = $('.radio');
+let $filter = $('#filter');
+let Filter = {}; 
+
+
+Filter.changeArtist = function (data){
+$selectArtist.change(function(){
+	// console.log($selectArtist.val());
+	// console.log(data[1].artist)
+	for (var x in data){
+	if ($selectArtist.val() === data[x].artist){
+		$('#output >:not(:eq())').hide();  
+		$('#song--[x]').appendTo($('#output')); 
+	}
+}
+})};
+
+	
+
+
+
+
+
+$selectAlbum.change(function(){
+	console.log("working too")
+})
+
+
+
+
+
+$radio.change(function(){
+	console.log("radio is working");
+});
+
+
+$filter.click(function (){
+	console.log("fired") /////////
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+module.exports = Filter;
+},{"./loader":4}],4:[function(require,module,exports){
 "use strict";
 
 var $ = require('jQuery');
-const Songs = require('./songs');
-const Views = require('./views');
-const Filter = require('./filter');
-const AddSongs = require('./addSongs');
-const Main = require("./mainModule");
+let MainModule = require('./mainModule'); ///// needs this///////
 ///////Everything has to draw off of this js file///////////
 let AJAX = {};
-let songs = [];
+
+let songsArray = [];
+let artistArray = [];
+let albumArray = [];
 
 AJAX.load = function() {
   return new Promise((resolve, reject) => {
@@ -9844,70 +9916,64 @@ AJAX.load = function() {
   });
 }; 
 
-/////////Needs 2 methods///////////
+/////////Needs method to push to array///////////
 ////////need to add data to songs array////////////
 AJAX.load().then(function(data){
   for (var i = 0; i < data.length; i++){
-  songs.push(data[i].title + " by " + data[i].artist + " on the album " + data[i].album)}
-  console.log(songs);
-  // console.log("hey", data); ///////will still print out correct value///////////
-  // Songs.addToArray(data);
+  songsArray.push(data[i].title);
+  artistArray.push(data[i].artist); 
+  albumArray.push(data[i].album);
+} ///////end of for loop//////
+console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
+MainModule.Print(data);  /////passing the "data" makes this print out object///////
+MainModule.Filter.changeArtist(data);
+MainModule.Delete();
+});
 
-}); ////// accessing the data correctly 
+module.exports = AJAX;
 
-
-
-// $.map(AJAX, function(song) {
-//     console.log(songs.album);
-// });
-
-},{"./addSongs":2,"./filter":3,"./mainModule":5,"./songs":6,"./views":7,"jQuery":1}],5:[function(require,module,exports){
+},{"./mainModule":5,"jQuery":1}],5:[function(require,module,exports){
 "use strict";
 
-const Songs = require("./songs");
-// const x = require("./x");
-// const x = require("./x");
-// const x = require("./x");
+let Print = require('./print');
+let Filter = require('./filter');
+let Loader = require('./loader');
+let Delete = require('./delete');
 
 let mainModule = {
-	Songs
+	Print, 
+	Filter, 
+	Loader,
+	Delete
 };
 
 
 
 
 module.exports = mainModule;
-},{"./songs":6}],6:[function(require,module,exports){
+},{"./delete":2,"./filter":3,"./loader":4,"./print":6}],6:[function(require,module,exports){
 "use strict";
+let Loader = require('./loader')
 
-// const Loader = require('./loader');
+let Print = function (data) {
+  let $output = $('#output') ;
+  let newHTML = "";
+  for (var x in data) {
+  newHTML += `<div id=song--${x}> <h3> ${data[x].title} </h3><p> ${data[x].artist} | ${data[x].album}</p><input type="button" class="deleteButton" value="Delete"></div>`;
+  }
+   $output.html(newHTML);
+  // console.log("data in function", data[2]);
+}
 
-
-console.log("test");
-let addToArray = function(data){
-	console.log("hey");
-	// for (var x in data){
-	// songs.push(data);
-};
-// addToArray();
-
-module.exports = addToArray;
-
-
-
+module.exports = Print;
+ 
 
 
 
 
 
-
-
-
-
-
-},{}],7:[function(require,module,exports){
-arguments[4][2][0].apply(exports,arguments)
-},{"dup":2}]},{},[4])
+  
+},{"./loader":4}]},{},[4])
 
 
 //# sourceMappingURL=bundle.js.map
