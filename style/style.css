@@ -20,6 +20,7 @@
 .songitem2, .songsItem {
   height: 30px; }
 
+/*This is a variable */
 .header {
   background: #FFB4B0;
   border: 2px solid black;

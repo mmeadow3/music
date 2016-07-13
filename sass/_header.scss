@@ -1,5 +1,8 @@
+/*This is a variable */
+$color: #FFB4B0;
+
 .header {
-	background: #FFB4B0;
+	background: $color;
 	border: 2px solid black;
     margin: 15px auto;
     padding: 2px 2px;
