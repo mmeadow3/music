@@ -3,6 +3,9 @@
 var $ = require('jQuery');
 let MainModule = require('./mainModule'); ///// needs this///////
 ///////Everything has to draw off of this js file///////////
+const test = require('../templates/test.hbs');
+
+
 let AJAX = {};
 
 let songsArray = [];
@@ -22,6 +25,7 @@ AJAX.load = function() {
   });
 }; 
 
+
 /////////Needs method to push to array///////////
 ////////need to add data to songs array////////////
 AJAX.load().then(function(data){
@@ -30,7 +34,8 @@ AJAX.load().then(function(data){
   artistArray.push(data[i].artist); 
   albumArray.push(data[i].album);
 } ///////end of for loop//////
-console.log(songsArray, artistArray, albumArray); /////// correctly logs out values to a filled array//////////
+console.log(songsArray, artistArray, albumArray, "test", test); /////// correctly logs out values to a filled array//////////
+$('body').append(test);
 MainModule.Print(data);  /////passing the "data" makes this print out object///////
 MainModule.Filter.changeArtist(data);
 MainModule.Delete();

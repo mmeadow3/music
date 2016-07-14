@@ -12,6 +12,7 @@
     "gulp": "^3.9.1",
     "gulp-jshint": "^2.0.1",
     "gulp-watch": "^4.3.8",
+    "hbsfy": "^2.7.0",
     "jquery": "^2.2.4",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0"
@@ -21,6 +22,7 @@
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "gulp-jasmine": "^2.4.0",
+    "handlebars": "^4.0.5",
     "jasmine": "^2.4.1",
     "jasmine-spec-reporter": "^2.5.0"
   },
@@ -31,5 +33,23 @@
   "bugs": {
     "url": "https://github.com/mmeadow3/music/issues"
   },
-  "homepage": "https://github.com/mmeadow3/music#readme"
+  "homepage": "https://github.com/mmeadow3/music#readme",
+  "browserify": {
+    "transform": [
+      [
+        "hbsfy",
+        {
+          "extensions": [
+            "hbs"
+          ],
+          "precompilerOptions": {
+            "knownHelpersOnly": true,
+            "knownHelpers": {
+              "myUltimateHelper": true
+            }
+          }
+        }
+      ]
+    ]
+  }
 }
