@@ -11001,8 +11001,8 @@ module.exports = Filter;
 var $ = require('jQuery');
 let MainModule = require('./mainModule'); ///// needs this///////
 ///////Everything has to draw off of this js file///////////
-const test = require('../templates/test.hbs');
-
+const test = require('../templates/test.hbs'); ////////this is pulling in the .hbs document to append to the $('body')
+//////test is just HTML items that are put into the JS
 
 let AJAX = {};
 
@@ -11086,7 +11086,7 @@ module.exports = Print;
 // hbsfy compiled Handlebars template
 var HandlebarsCompiler = require('hbsfy/runtime');
 module.exports = HandlebarsCompiler.template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<div><p>Test</p></div>\n";
+    return "<div><p>This is some text that has been appended by a .hbs file located in the src/javascripts directory</p></div>\n";
 },"useData":true});
 
 },{"hbsfy/runtime":20}]},{},[24])

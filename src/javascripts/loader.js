@@ -3,8 +3,8 @@
 var $ = require('jQuery');
 let MainModule = require('./mainModule'); ///// needs this///////
 ///////Everything has to draw off of this js file///////////
-const test = require('../templates/test.hbs');
-
+const test = require('../templates/test.hbs'); ////////this is pulling in the .hbs document to append to the $('body')
+//////test is just HTML items that are put into the JS
 
 let AJAX = {};
 
